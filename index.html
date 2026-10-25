@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Divad Castillo | Small Business Website Designer</title>
+  <meta name="description" content="Divad Castillo builds simple, fast, mobile-friendly websites for small businesses. Based in Miami, FL. English and Spanish.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14213d;
+      --muted: #5c677d;
+      --bg: #ffffff;
+      --soft: #f4f6fb;
+      --brand: #1f7a5a;
+      --brand-dark: #165c43;
+      --accent: #f4a261;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    header { position: sticky; top: 0; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #e6e9f0; z-index: 10; }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+    .logo span { color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { text-decoration: none; color: var(--muted); font-weight: 500; }
+    nav ul a:hover { color: var(--ink); }
+
+    .btn { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; transition: background .2s; }
+    .btn:hover { background: var(--brand-dark); }
+    .btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+
+    /* Hero */
+    .hero { padding: 72px 0 64px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .tag { display: inline-block; background: #e3f2ec; color: var(--brand-dark); font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; margin-bottom: 18px; }
+    h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.12; letter-spacing: -.02em; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--brand); }
+    .lead { font-size: 1.15rem; color: var(--muted); margin-bottom: 28px; max-width: 34em; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .photo { position: relative; }
+    .photo img { width: 100%; max-width: 360px; aspect-ratio: 4/5; object-fit: cover; object-position: center 30%; border-radius: 24px; display: block; margin-left: auto; box-shadow: 0 20px 50px rgba(20,33,61,.18); }
+    .badge { position: absolute; left: 0; bottom: 24px; background: #fff; border-radius: 12px; padding: 12px 16px; box-shadow: 0 10px 30px rgba(20,33,61,.15); font-size: .9rem; }
+    .badge strong { display: block; font-size: 1rem; }
+
+    section { padding: 72px 0; }
+    section.soft { background: var(--soft); }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); letter-spacing: -.01em; margin-bottom: 10px; }
+    .sub { color: var(--muted); margin-bottom: 36px; max-width: 40em; }
+
+    /* Services */
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: #fff; border: 1px solid #e6e9f0; border-radius: var(--radius); padding: 24px; }
+    .card .icon { width: 44px; height: 44px; border-radius: 12px; background: #e3f2ec; display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: .95rem; }
+
+    /* Work */
+    .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .project { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #e6e9f0; text-decoration: none; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+    .project:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(20,33,61,.12); }
+    .thumb { height: 170px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 1.35rem; text-align: center; padding: 20px; }
+    .thumb.taco { background: linear-gradient(135deg, #c1121f, #f77f00); }
+    .thumb.clean { background: linear-gradient(135deg, #0077b6, #48cae4); }
+    .thumb.barber { background: linear-gradient(135deg, #111, #444); }
+    .project .body { padding: 20px; }
+    .project h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .project p { color: var(--muted); font-size: .92rem; margin-bottom: 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips span { font-size: .75rem; background: var(--soft); padding: 4px 10px; border-radius: 999px; color: var(--muted); }
+    .note { margin-top: 18px; font-size: .85rem; color: var(--muted); }
+
+    /* Why */
+    .why { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .checks { list-style: none; display: grid; gap: 14px; }
+    .checks li { padding-left: 34px; position: relative; }
+    .checks li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--brand); color: #fff; font-size: .8rem; display: grid; place-items: center; font-weight: 700; }
+    .quote { background: var(--ink); color: #fff; border-radius: 20px; padding: 32px; font-size: 1.15rem; }
+    .quote small { display: block; margin-top: 14px; color: #b8c1d9; font-size: .9rem; }
+
+    /* Pricing */
+    .price { font-size: 2rem; font-weight: 800; margin: 6px 0 4px; }
+    .price small { font-size: .9rem; color: var(--muted); font-weight: 500; }
+    .card ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; font-size: .93rem; color: var(--muted); }
+    .card ul li::before { content: "• "; color: var(--brand); font-weight: 700; }
+    .card.featured { border: 2px solid var(--brand); }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact .sub { margin-left: auto; margin-right: auto; }
+    footer { padding: 28px 0; border-top: 1px solid #e6e9f0; color: var(--muted); font-size: .9rem; text-align: center; }
+
+    @media (max-width: 860px) {
+      .hero .wrap, .why { grid-template-columns: 1fr; }
+      .photo img { margin: 0 auto; max-width: 300px; }
+      .badge { left: 50%; transform: translateX(-130%); }
+      .grid3, .work { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="logo" href="#">Divad <span>Castillo</span></a>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn" href="#contact">Get a website</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="tag">Miami, FL · English &amp; Español</span>
+          <h1>Simple websites that bring <em>small businesses</em> more customers.</h1>
+          <p class="lead">Hi, I'm Divad. I build clean, fast, mobile-friendly websites for restaurants, contractors, salons, cleaning services and local shops. Clear pricing, clear communication, and delivered on time.</p>
+          <div class="cta">
+            <a class="btn" href="#work">See my work</a>
+            <a class="btn ghost" href="#contact">Let's talk</a>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="images/divad.jpg" alt="Divad Castillo, website designer">
+          <div class="badge"><strong>On time, every time</strong>9 years of on-time deliveries</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="soft">
+      <div class="wrap">
+        <h2>What I can do for your business</h2>
+        <p class="sub">Everything you need to look professional online, without the confusing tech talk.</p>
+        <div class="grid3">
+          <div class="card"><div class="icon">🖥️</div><h3>New business websites</h3><p>1–5 page websites that show your services, prices, hours and location, and look great on any phone.</p></div>
+          <div class="card"><div class="icon">🚀</div><h3>Landing pages</h3><p>A single focused page for a promotion, an ad campaign or a new service, built to get calls and bookings.</p></div>
+          <div class="card"><div class="icon">✨</div><h3>Website redesigns</h3><p>Turn an old, slow or outdated site into a modern one your customers trust.</p></div>
+          <div class="card"><div class="icon">📍</div><h3>Get found on Google</h3><p>SEO basics, Google Maps and page titles set up so local customers can find you.</p></div>
+          <div class="card"><div class="icon">📞</div><h3>Contact &amp; booking</h3><p>Click-to-call buttons, contact forms and social media links that make it easy to reach you.</p></div>
+          <div class="card"><div class="icon">🛠️</div><h3>Domain, hosting &amp; updates</h3><p>I set up your domain and hosting and can keep your site updated after launch.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Sample projects</h2>
+        <p class="sub">Click any project to see the full live website.</p>
+        <div class="work">
+          <a class="project" href="samples/taqueria/">
+            <div class="thumb taco">La Esquina<br>Taquería</div>
+            <div class="body">
+              <h3>Restaurant website</h3>
+              <p>Menu, hours, location map and a big "Call to order" button.</p>
+              <div class="chips"><span>Restaurant</span><span>Mobile-first</span><span>Menu</span></div>
+            </div>
+          </a>
+          <a class="project" href="samples/cleaning/">
+            <div class="thumb clean">Sparkle Home<br>Cleaning</div>
+            <div class="body">
+              <h3>Cleaning service website</h3>
+              <p>Services, simple pricing, reviews and a quote request form.</p>
+              <div class="chips"><span>Home services</span><span>Lead form</span><span>Pricing</span></div>
+            </div>
+          </a>
+          <a class="project" href="samples/barber/">
+            <div class="thumb barber">Sharp Line<br>Barbershop</div>
+            <div class="body">
+              <h3>Barbershop website</h3>
+              <p>Bold design with price list, team, hours and a "Book now" button.</p>
+              <div class="chips"><span>Barber</span><span>Booking</span><span>Bold design</span></div>
+            </div>
+          </a>
+        </div>
+        <p class="note">These are demo websites for made-up businesses, built to show my style and skills.</p>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap why">
+        <div>
+          <h2>Why work with me</h2>
+          <p class="sub">Before web design, I ran my own trucking business for 9 years. That taught me how to treat customers and keep promises.</p>
+          <ul class="checks">
+            <li><strong>I deliver on time.</strong> Years of on-time deliveries with a clean record. Your deadline is my deadline.</li>
+            <li><strong>I understand small business.</strong> I ran one. I know you need results, not fancy words.</li>
+            <li><strong>Clear communication.</strong> Quick replies in English or Spanish, and updates as the work moves forward.</li>
+            <li><strong>Easy to update.</strong> I build sites you can change yourself, or I can do it for you.</li>
+          </ul>
+        </div>
+        <div class="quote">"Your website should work as hard as you do. I build it right, keep it simple, and get it done when I say I will."<small>Divad Castillo</small></div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>Simple pricing</h2>
+        <p class="sub">Starting prices. Every business is different, so message me for an exact quote.</p>
+        <div class="grid3">
+          <div class="card">
+            <h3>Landing page</h3>
+            <div class="price">$150 <small>starting</small></div>
+            <p>One page, ready in about 3–5 days.</p>
+            <ul><li>Mobile-friendly design</li><li>Click-to-call &amp; contact form</li><li>Google Maps</li></ul>
+          </div>
+          <div class="card featured">
+            <h3>Business website</h3>
+            <div class="price">$300 <small>starting</small></div>
+            <p>Up to 5 pages, ready in about 1–2 weeks.</p>
+            <ul><li>Everything in Landing page</li><li>Services, About &amp; Contact pages</li><li>SEO basics</li><li>Domain &amp; hosting setup</li></ul>
+          </div>
+          <div class="card">
+            <h3>Updates &amp; care</h3>
+            <div class="price">$25 <small>/ hour</small></div>
+            <p>For changes after your site is live.</p>
+            <ul><li>Text, photo &amp; price updates</li><li>New pages or sections</li><li>Fixes and improvements</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="soft contact">
+      <div class="wrap">
+        <h2>Ready for a website that works?</h2>
+        <p class="sub">Tell me a little about your business and I'll reply with ideas and a quote, usually the same day.</p>
+        <div class="cta" style="justify-content:center">
+          <a class="btn" href="https://www.upwork.com/" target="_blank" rel="noopener">Hire me on Upwork</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Divad Castillo · Small Business Website Designer · Miami, FL</div>
+  </footer>
+</body>
+</html>
