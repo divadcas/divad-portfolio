@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Esquina Taquería | Authentic Tacos in Miami</title>
+  <meta name="description" content="Demo restaurant website by Divad Castillo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --red: #c1121f; --orange: #f77f00; --cream: #fff8ee; --ink: #2b1d14; --muted: #7a6455; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Nunito", system-ui, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    .demo { background: #14213d; color: #fff; font-size: .82rem; text-align: center; padding: 8px 12px; }
+    .demo a { color: #f4a261; font-weight: 700; }
+    header { background: var(--red); color: #fff; }
+    nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { font-family: "Bebas Neue", sans-serif; font-size: 1.9rem; letter-spacing: 1px; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 22px; font-weight: 600; }
+    nav ul a { text-decoration: none; opacity: .9; }
+    .btn { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; font-weight: 800; padding: 13px 24px; border-radius: 10px; }
+    .btn.white { background: #fff; color: var(--red); }
+    .hero { background: linear-gradient(rgba(43,29,20,.55), rgba(43,29,20,.55)), radial-gradient(circle at 30% 40%, #f77f00, #c1121f 70%); color: #fff; text-align: center; padding: 96px 0; }
+    .hero h1 { font-family: "Bebas Neue", sans-serif; font-size: clamp(3rem, 9vw, 5.5rem); line-height: 1; letter-spacing: 2px; }
+    .hero p { font-size: 1.2rem; margin: 14px auto 28px; max-width: 30em; }
+    .hero .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    section { padding: 64px 0; }
+    h2 { font-family: "Bebas Neue", sans-serif; font-size: 2.6rem; letter-spacing: 1px; color: var(--red); text-align: center; margin-bottom: 6px; }
+    .sub { text-align: center; color: var(--muted); margin-bottom: 36px; }
+    .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
+    .item { display: flex; justify-content: space-between; gap: 12px; border-bottom: 2px dotted #e5cdb3; padding: 10px 0; }
+    .item h3 { font-size: 1.05rem; }
+    .item p { color: var(--muted); font-size: .9rem; }
+    .item .price { font-weight: 800; color: var(--red); white-space: nowrap; }
+    .info { background: #fff; }
+    .info .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+    .info .box { padding: 24px; border-radius: 14px; background: var(--cream); }
+    .info .box .ico { font-size: 2rem; }
+    .info h3 { margin: 8px 0 4px; }
+    .map { margin-top: 28px; border-radius: 14px; overflow: hidden; border: 0; width: 100%; height: 280px; }
+    .order { background: var(--red); color: #fff; text-align: center; }
+    .order h2 { color: #fff; }
+    footer { background: var(--ink); color: #cdb8a6; text-align: center; padding: 24px 0; font-size: .9rem; }
+    @media (max-width: 760px) {
+      nav ul { display: none; }
+      .menu, .info .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">Demo website for a made-up business, designed by Divad Castillo. <a href="../../">← Back to portfolio</a></div>
+  <header>
+    <nav class="wrap">
+      <a class="logo" href="#">La Esquina</a>
+      <ul><li><a href="#menu">Menu</a></li><li><a href="#visit">Visit</a></li><li><a href="#order">Order</a></li></ul>
+      <a class="btn white" href="tel:+13055550142">Call</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Real Tacos.<br>Made Fresh Daily.</h1>
+      <p>Family recipes, handmade tortillas and salsas made every morning, right here in Miami.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+13055550142">📞 Call to Order</a>
+        <a class="btn white" href="#menu">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Our Menu</h2>
+      <p class="sub">All tacos come on fresh corn tortillas with onion, cilantro and lime.</p>
+      <div class="menu">
+        <div class="item"><div><h3>Al Pastor</h3><p>Marinated pork, grilled pineapple</p></div><span class="price">$3.50</span></div>
+        <div class="item"><div><h3>Carne Asada</h3><p>Grilled steak, house salsa verde</p></div><span class="price">$4.00</span></div>
+        <div class="item"><div><h3>Pollo Asado</h3><p>Citrus chicken, pickled onion</p></div><span class="price">$3.25</span></div>
+        <div class="item"><div><h3>Baja Fish</h3><p>Crispy fish, cabbage, chipotle crema</p></div><span class="price">$4.25</span></div>
+        <div class="item"><div><h3>Veggie</h3><p>Roasted peppers, black beans, queso</p></div><span class="price">$3.00</span></div>
+        <div class="item"><div><h3>Burrito Grande</h3><p>Any meat, rice, beans, cheese</p></div><span class="price">$11.00</span></div>
+        <div class="item"><div><h3>Chips &amp; Guac</h3><p>Made to order</p></div><span class="price">$6.50</span></div>
+        <div class="item"><div><h3>Horchata / Jamaica</h3><p>House-made aguas frescas</p></div><span class="price">$3.00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="info">
+    <div class="wrap">
+      <h2>Come Visit</h2>
+      <p class="sub">Dine in, take out, or call ahead.</p>
+      <div class="grid">
+        <div class="box"><div class="ico">📍</div><h3>Location</h3><p>123 Example Ave<br>Miami, FL 33101</p></div>
+        <div class="box"><div class="ico">🕒</div><h3>Hours</h3><p>Mon–Thu 11am–9pm<br>Fri–Sun 11am–11pm</p></div>
+        <div class="box"><div class="ico">📞</div><h3>Phone</h3><p><a href="tel:+13055550142">(305) 555-0142</a></p></div>
+      </div>
+      <iframe class="map" title="Map of Miami" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21%2C25.76%2C-80.18%2C25.79&amp;layer=mapnik"></iframe>
+    </div>
+  </section>
+
+  <section id="order" class="order">
+    <div class="wrap">
+      <h2>Hungry? Call Ahead!</h2>
+      <p style="margin:8px 0 24px">Your order will be hot and ready when you arrive.</p>
+      <a class="btn white" href="tel:+13055550142">📞 (305) 555-0142</a>
+    </div>
+  </section>
+
+  <footer>© 2026 La Esquina Taquería (demo) · Website by Divad Castillo</footer>
+</body>
+</html>
